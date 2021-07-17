@@ -22,7 +22,7 @@ app.get('/*', function(req, res) {
 sendFile(path.join(__dirname + '/dist/pubappweb/index.html'));
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("Server is listening on port "+ 8080);
 });
 
