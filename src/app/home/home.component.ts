@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  localStorage!: Storage;
+  localStorageEntry: string;
+  constructor() {
+    this.localStorage = window.localStorage;
+    this.localStorageEntry = "noch nix gemacht"
+   }
 
   ngOnInit(): void {
+  }
+
+  testSet(){
+    this.localStorage.setItem("testKey", "Das funktioniert ja super!")
+  }
+
+  testGet(){
+    this.localStorageEntry = this.localStorage.getItem("testKey")!;
   }
 
 }
